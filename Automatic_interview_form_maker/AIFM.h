@@ -13,7 +13,7 @@
 
 using namespace std;
 
-class AGM
+class AIFM
 {
 public:
 	void input();

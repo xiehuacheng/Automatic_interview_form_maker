@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	AGM test01;
+	AIFM test01;
 	test01.input();
 	test01.run();
 	test01.show1();

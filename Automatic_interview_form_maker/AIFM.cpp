@@ -4,7 +4,7 @@
 #define NOT_FREE "B.不可以"
 using namespace std;
 
-void AGM::input()
+void AIFM::input()
 {
 	//需求信息的获取
 	cout << "请将表格放入文件夹中并输入文件名（后缀名为.csv）：";
@@ -182,7 +182,7 @@ void AGM::input()
 	ifs.close();
 }
 
-void AGM::run()
+void AIFM::run()
 {
 	srand(unsigned(time(NULL)));
 	//高优先级：按首选时间安排
@@ -285,7 +285,7 @@ void AGM::run()
 	}
 }
 
-bool AGM::swap(person& a, vector<person>& arr)
+bool AIFM::swap(person& a, vector<person>& arr)
 {
 	//只有首选时间有空的情况
 	if (a.freeSize == 1)
@@ -369,7 +369,7 @@ bool AGM::swap(person& a, vector<person>& arr)
 }
 
 //自适应运行
-bool AGM::adaptiveRun(person& a)
+bool AIFM::adaptiveRun(person& a)
 {
 	for (vector<Size>::iterator sit = this->availableArr.end(); sit != this->availableArr.begin(); sit--)
 	{
@@ -394,7 +394,7 @@ bool AGM::adaptiveRun(person& a)
 }
 
 //快排的划分函数
-int AGM::partition(vector<Size>& arr, int low, int high)
+int AIFM::partition(vector<Size>& arr, int low, int high)
 {
 	Size pivot = arr[low];
 	while (low < high)
@@ -415,7 +415,7 @@ int AGM::partition(vector<Size>& arr, int low, int high)
 }
 
 //快排
-void AGM::quickSort(vector<Size>& arr, int low, int high)
+void AIFM::quickSort(vector<Size>& arr, int low, int high)
 {
 	if (low >= high)
 	{
@@ -429,7 +429,7 @@ void AGM::quickSort(vector<Size>& arr, int low, int high)
 	}
 }
 
-bool AGM::transfer(int index)
+bool AIFM::transfer(int index)
 {
 	//index为初始数组在ptr数组中的下标
 	vector<person> arr = this->timeArrPtrArr[index];
@@ -488,7 +488,7 @@ bool AGM::transfer(int index)
 	return false;
 }
 
-void AGM::output()
+void AIFM::output()
 {
 	ofstream ofs;
 	cout << "请输入导出结果的文件名（后缀名为.csv）：";
@@ -529,7 +529,7 @@ void AGM::output()
 }
 
 //展示安排好的人员
-void AGM::show1()
+void AIFM::show1()
 {
 	for (int i = 0; i < this->timeSize; i++)
 	{
@@ -542,7 +542,7 @@ void AGM::show1()
 }
 
 //展示录入好的数据
-void AGM::show2()
+void AIFM::show2()
 {
 	for (int i = 0; i < this->personSize; i++)
 	{
